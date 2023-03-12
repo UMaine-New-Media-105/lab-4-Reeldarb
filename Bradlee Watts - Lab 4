@@ -1,0 +1,31 @@
+function setup() {
+  createCanvas(400, 400);
+  rectMode(CORNER);
+}
+
+function draw() {
+  background(220);
+  drawSprite(200, 200, 1, 60, 20, 30, 200, 30, 50);
+}
+
+function drawSprite(x, y, size, r, g, b, rr, gg, bb) {
+  if (mouseIsPressed === true) {
+    fill(rr, gg, bb);
+    translate(x, y);
+    scale(size);
+    noStroke();
+    ellipse(0, 0, 100);
+    triangle(25, -30, 75, -30, 50, -100);
+    rect(-25, 50, 50, 25);
+    triangle(-25, -30, -75, -30, -50, -100);
+  } else {
+    fill(r, g, b);
+    translate(x, y);
+    scale(size / 2);
+    noStroke();
+    ellipse(0, 0, 100);
+    triangle(25, -30, 75, -30, 50, -100);
+    rect(-25, 50, 50, 25);
+    triangle(-25, -30, -75, -30, -50, -100);
+  }
+}
